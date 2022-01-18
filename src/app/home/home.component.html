@@ -1,0 +1,75 @@
+<div class="page-wrapper">
+    <header>
+        <nav role="navigation">
+            <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+                    <a href="#">
+                        <li>Home</li>
+                    </a>
+                    <a href="#">
+                        <li>About</li>
+                    </a>
+                    <a href="#">
+                        <li>Info</li>
+                    </a>
+                    <a href="#">
+                        <li>Contact</li>
+                    </a>
+                    <a href="https://erikterwan.com/" target="_blank">
+                        <li>Show me more</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+        <div class="pr-20">
+            <h1>Santa Inc</h1>
+            <small>V4.1.2</small>
+        </div>
+    </header>
+    <aside>
+        <img src="assets/images/clipart182747[31].png" alt="">
+        <h1>Santa Inc</h1>
+        <small>V4.1.2</small>
+        <ul type="none">
+            <li [ngClass]="{'selected': selectedTab === 'Toys'}"><a href="#" (click)="selected('Toys')"><i
+                        class="fa fa-child" aria-hidden="true"></i> Toys factory</a></li>
+            <li [ngClass]="{'selected': selectedTab === 'Delivery'}"><a href="#" (click)="selected('Delivery')"><i
+                        class="fa fa-truck" aria-hidden="true"></i> Delivery</a></li>
+            <li [ngClass]="{'selected': selectedTab === 'Legal'}"><a href="#" (click)="selected('Legal')"><i
+                        class="fa fa-legal" aria-hidden="true"></i> Legal </a></li>
+            <li [ngClass]="{'selected': selectedTab === 'Disconnect'}"><a href="#" (click)="selected('Disconnect')"><i
+                        class="fa fa-power-off" aria-hidden="true"></i> Disconnect</a></li>
+        </ul>
+        <div class="footer">
+            All rights reserved
+        </div>
+    </aside>
+    <div class="content-wrapper">
+        <img src="assets/images/pngfind.com-pine-branch-png-1300688[92].png" alt="">
+        <h1>
+            Delivery List
+        </h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address</th>
+                    <th>Wishes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let child of childrens" [ngClass]="{'red': child.performance === 'poor'}">
+                    <td>{{child.first_name}}</td>
+                    <td>{{child.last_name}}</td>
+                    <td>{{child.address}}</td>
+                    <td>{{child.wishes}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
